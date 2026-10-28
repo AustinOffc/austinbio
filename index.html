@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Austin</title>
+<meta name="theme-color" content="#0e1216">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Barlow:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--bg:#0e1216;--panel:#161c23;--line:#2b3440;--tx:#e9eef3;--mut:#8c98a6;--ac:#4cc9f0;--sp:cubic-bezier(.2,1.3,.4,1);--cut:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));--hex:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}
+*{box-sizing:border-box;margin:0}
+body{min-height:100vh;color:var(--tx);font-family:'Barlow',system-ui,sans-serif;font-weight:500;background:radial-gradient(560px 360px at 50% 0,#1b4a66aa,transparent 70%),repeating-linear-gradient(135deg,#ffffff07 0 1px,transparent 1px 9px),var(--bg);overflow-x:hidden}
+main{position:relative;z-index:1;max-width:440px;margin:0 auto;padding:max(44px,env(safe-area-inset-top)) 20px max(40px,env(safe-area-inset-bottom));text-align:center}
+.av{position:relative;width:148px;height:148px;margin:0 auto;animation:pop .8s var(--sp) both}
+@keyframes pop{from{opacity:0;scale:.6}}
+.av svg{position:absolute;inset:0;overflow:visible;animation:sp 26s linear infinite}
+@keyframes sp{to{rotate:360deg}}
+.av text{fill:var(--ac);font:600 13px 'Chakra Petch',sans-serif}
+.pic{position:absolute;inset:22px;border-radius:50%;overflow:hidden;background:#1f2a35;border:2px solid var(--ac);display:grid;place-items:center;color:var(--ac);font:700 44px 'Chakra Petch',sans-serif;animation:gl 4s ease-in-out infinite}
+@keyframes gl{0%,100%{box-shadow:0 0 22px #4cc9f044}50%{box-shadow:0 0 42px #4cc9f099}}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+h1{margin-top:18px;font:700 44px/1 'Chakra Petch',sans-serif;letter-spacing:.06em;text-transform:uppercase;animation:in .7s .15s both}
+.tg{margin:10px auto 0;max-width:30ch;color:var(--mut);font-size:15px;line-height:1.45;animation:in .7s .25s both}
+@keyframes in{from{opacity:0;translate:0 14px}}
+.list{display:grid;gap:14px;margin-top:34px}
+.t{position:relative;display:flex;align-items:center;gap:14px;padding:15px 18px 15px 20px;color:var(--tx);text-decoration:none;text-align:left;background:var(--line);clip-path:var(--cut);transition:transform .3s var(--sp),background .2s;animation:slide .6s var(--sp) both;animation-delay:calc(.45s + var(--i)*80ms)}
+@keyframes slide{from{opacity:0;translate:-34px 0}}
+.t::before{content:"";position:absolute;inset:1px;background:var(--panel);clip-path:var(--cut)}
+.t::after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c);transition:width .35s var(--sp),opacity .3s}
+.t>*{position:relative;z-index:1}
+.t:hover,.t:focus-visible{transform:translateX(6px);background:var(--c);outline:0}
+.t:hover::after,.t:focus-visible::after{width:100%;opacity:.12}
+.ic{flex:none;width:50px;height:50px;display:grid;place-items:center;font-size:20px;color:var(--c);background:var(--bg);clip-path:var(--hex);transition:transform .35s var(--sp),color .2s,background .2s}
+.t:hover .ic,.t:focus-visible .ic{transform:rotate(-12deg) scale(1.1);background:var(--c);color:var(--bg)}
+.tx b{display:block;font:700 18px 'Chakra Petch',sans-serif;letter-spacing:.02em}
+.tx small{display:block;margin-top:2px;font-size:13.5px;line-height:1.3;color:var(--mut)}
+.s{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:38px}
+.s a{width:54px;height:54px;display:grid;place-items:center;font-size:21px;color:var(--tx);text-decoration:none;background:#222c38;clip-path:var(--hex);transition:transform .3s var(--sp),background .2s,color .2s;animation:rise .6s var(--sp) both;animation-delay:calc(1.1s + var(--i)*70ms)}
+@keyframes rise{from{opacity:0;translate:0 18px}}
+.s a:hover,.s a:focus-visible{transform:translateY(-6px);background:var(--ac);color:var(--bg);outline:0}
+footer{margin-top:30px;font-size:13px;color:var(--mut)}
+#fx{position:fixed;inset:0;overflow:hidden;pointer-events:none}
+#fx span{position:absolute}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="fx" aria-hidden="true"></div>
+<main>
+  <header>
+    <div class="av">
+      <svg viewBox="0 0 200 200" aria-hidden="true"><defs><path id="c" d="M100,100m-82,0a82,82 0 1,1 164,0a82,82 0 1,1 -164,0"/></defs><text><textPath href="#c" id="ring" textLength="508" lengthAdjust="spacing"></textPath></text></svg>
+      <div class="pic"><b id="mono"></b><img id="pic" alt=""></div>
+    </div>
+    <h1 id="name"></h1>
+    <p class="tg" id="tag"></p>
+  </header>
+  <nav class="list" id="list"></nav>
+  <div class="s" id="soc"></div>
+  <footer id="ft"></footer>
+</main>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const url=x=>/^(https?:|mailto:|tel:)/.test(x)?x:'https://'+x;
+const tints=['#4cc9f0','#ffb703','#ff5d5d','#52e08a','#7b93ff','#ff8a3d'];
+const rots=[-1.4,1,-.8,1.3,-1,.7];
+fetch('data.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(d=>{
+  document.title=d.name;
+  $('#name').textContent=d.name;
+  $('#tag').textContent=d.tagline;
+  $('#mono').textContent=(d.name||'A')[0];
+  $('#ring').textContent=(d.name.toUpperCase()+' • ').repeat(Math.ceil(36/(d.name.length+3)));
+  const im=$('#pic');im.onerror=()=>im.remove();im.src=d.avatar;
+  $('#list').innerHTML=d.links.map((l,i)=>`<a class="t" style="--i:${i};--c:${tints[i%6]};--r:${rots[i%6]}deg" href="${esc(url(l.url))}" target="_blank" rel="noopener"><span class="ic"><i class="${esc(l.icon)}"></i></span><span class="tx"><b>${esc(l.title)}</b><small>${esc(l.desc)}</small></span></a>`).join('');
+  $('#soc').innerHTML=d.socials.map((s,i)=>`<a style="--i:${i}" href="${esc(url(s.url))}" target="_blank" rel="noopener" aria-label="${esc(s.label)}"><i class="${esc(s.icon)}"></i></a>`).join('');
+  $('#ft').textContent='© '+new Date().getFullYear()+' '+d.name;
+}).catch(()=>{$('#list').textContent='Gagal memuat data.json'});
+
+(()=>{
+  const E=['🚀','🦅','⚡','🔥','🎮','🎧','💻','🏁','🖤','⭐','🌙','🏆'],f=$('#fx'),R=(a,b)=>a+Math.random()*(b-a),S=()=>Math.random()<.5?-1:1;
+  E.concat(E.slice(0,6)).forEach(e=>{
+    const s=document.createElement('span');s.textContent=e;
+    s.style.cssText=`left:${R(2,92)}%;top:${R(3,92)}%;font-size:${R(18,34)}px;opacity:${R(.35,.7)}`;
+    f.append(s);
+    if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    const v=Math.random()<.5,d=R(40,110)*S(),w=R(8,26)*S();
+    s.animate([{transform:'translate(0,0) rotate(0deg)'},{transform:`translate(${v?w:d}px,${v?d:w}px) rotate(${R(-14,14)}deg)`}],{duration:R(14000,34000),iterations:Infinity,direction:'alternate',easing:'ease-in-out',delay:-R(0,15000)});
+  });
+})();
+</script>
+</body>
+</html>

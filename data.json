@@ -1,0 +1,20 @@
+{
+  "name": "Austin",
+  "tagline": "Developer asal Indonesia. Payment gateway, marketplace, catatan, dan musik.",
+  "avatar": "assets/avatar.png",
+  "links": [
+    { "title": "AustinPay", "desc": "Website payment gateway", "url": "austinx.cloud", "icon": "fa-solid fa-wallet" },
+    { "title": "Austin Store", "desc": "Marketplace top up semua game & layanan digital lengkap", "url": "mymarket.id", "icon": "fa-solid fa-bag-shopping" },
+    { "title": "LuciBook", "desc": "Website catatan", "url": "lucibook.my.id", "icon": "fa-solid fa-book-open" },
+    { "title": "LMPlay", "desc": "Website musik", "url": "lmplay.my.id", "icon": "fa-solid fa-music" },
+    { "title": "Channel Austin Official", "desc": "Channel informasi Austin di WhatsApp", "url": "https://whatsapp.com/channel/0029VbAYbLc7tkizhltuyV1b", "icon": "fa-solid fa-bullhorn" },
+    { "title": "Group Community", "desc": "Group community & informasi Austin", "url": "https://chat.whatsapp.com/CTzGwCpgWD65QuLkIicc89", "icon": "fa-solid fa-users" }
+  ],
+  "socials": [
+    { "label": "WhatsApp", "icon": "fa-brands fa-whatsapp", "url": "https://wa.me/628xxxxxxxxxx" },
+    { "label": "TikTok", "icon": "fa-brands fa-tiktok", "url": "https://tiktok.com/@username" },
+    { "label": "Instagram", "icon": "fa-brands fa-instagram", "url": "https://instagram.com/username" },
+    { "label": "Facebook", "icon": "fa-brands fa-facebook-f", "url": "https://facebook.com/username" },
+    { "label": "Telegram", "icon": "fa-brands fa-telegram", "url": "https://t.me/username" }
+  ]
+}
