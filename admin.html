@@ -61,7 +61,7 @@ async function api(path,o={}){
 const inp=(k,lab,v)=>`<label>${lab}<input data-k="${k}" value="${esc(v)}"></label>`;
 const btns=(l,i)=>`<span><button class="g" data-a="up" data-l="${l}" data-i="${i}">↑</button> <button class="g" data-a="dn" data-l="${l}" data-i="${i}">↓</button> <button class="g" data-a="rm" data-l="${l}" data-i="${i}">Hapus</button></span>`;
 function render(){
-  $('#top').innerHTML=inp('name','Nama',D.name)+inp('info','Info singkat (pisahkan dengan koma)',D.info)+inp('tagline','Tagline',D.tagline)+inp('avatar','Foto / logo (URL atau path)',D.avatar)+'<label>Unggah foto baru<input type="file" id="up" accept="image/*"></label>';
+  $('#top').innerHTML=inp('name','Nama',D.name)+inp('info','Info singkat (pisahkan dengan koma)',D.info)+inp('tagline','Tagline',D.tagline)+inp('avatar','Foto / logo (URL atau path)',D.avatar)+'<label>Unggah foto baru<input type="file" id="up" accept="image/*"></label>'+inp('music','Musik latar (path/URL mp3, kosongkan untuk mematikan)',D.music)+'<label>Unggah musik (mp3)<input type="file" id="upm" accept="audio/*"></label>';
   $('#ln').innerHTML=D.links.map((l,i)=>`<div class="it"><div class="hd"><b>Tombol ${i+1}</b>${btns('links',i)}</div>${inp(`links.${i}.title`,'Judul',l.title)}${inp(`links.${i}.desc`,'Deskripsi',l.desc)}${inp(`links.${i}.url`,'Link',l.url)}${inp(`links.${i}.icon`,'Ikon',l.icon)}</div>`).join('');
   $('#sc').innerHTML=D.socials.map((s,i)=>`<div class="it"><div class="hd"><b>${esc(s.label)||'Sosmed '+(i+1)}</b>${btns('socials',i)}</div>${inp(`socials.${i}.label`,'Nama',s.label)}${inp(`socials.${i}.url`,'Link',s.url)}${inp(`socials.${i}.icon`,'Ikon',s.icon)}</div>`).join('');
 }
@@ -76,14 +76,14 @@ document.onclick=e=>{
   render();
 };
 document.onchange=async e=>{
-  const f=e.target.id==='up'&&e.target.files[0];if(!f)return;
+  const m=e.target.id==='upm',f=(m||e.target.id==='up')&&e.target.files[0];if(!f)return;
   try{
-    say('Mengunggah foto...');
-    const path='assets/avatar.'+(f.name.split('.').pop()||'png').toLowerCase();
+    say('Mengunggah file...');
+    const path='assets/'+(m?'music':'avatar')+'.'+(f.name.split('.').pop()||'png').toLowerCase();
     const b64=await new Promise(r=>{const x=new FileReader();x.onload=()=>r(x.result.split(',')[1]);x.readAsDataURL(f)});
     let sha;try{sha=(await api(path)).sha}catch{}
-    await api(path,{method:'PUT',body:JSON.stringify({message:'Update foto profil',content:b64,branch:cfg().b,sha})});
-    D.avatar=path+'?v='+Date.now();render();say('Foto terunggah. Klik Simpan untuk menerapkan.');
+    await api(path,{method:'PUT',body:JSON.stringify({message:'Update file via admin',content:b64,branch:cfg().b,sha})});
+    D[m?'music':'avatar']=path+'?v='+Date.now();render();say('File terunggah. Klik Simpan untuk menerapkan.');
   }catch(x){say(x.message,1)}
 };
 $('#load').onclick=async()=>{

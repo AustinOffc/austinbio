@@ -21,3 +21,8 @@ Cara pakai admin:
 Catatan: data.json sudah berisi profil dan link sosmed terbaru.
 Foto di data.json mengarah ke assets/avatar.webp, jadi pastikan file
 foto itu ada di folder assets/ (atau unggah lewat admin).
+
+Musik latar: isi kolom "music" di data.json (contoh assets/music.mp3) atau
+unggah mp3 lewat admin. Musik mulai saat pengunjung pertama kali menyentuh
+halaman (browser memblokir autoplay bersuara), dan ada tombol putar/jeda
+di pojok kanan bawah. Kosongkan "music" untuk mematikan fitur ini.
