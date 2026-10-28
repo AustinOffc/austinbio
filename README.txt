@@ -18,5 +18,6 @@ Cara pakai admin:
 3. Klik Muat data, edit, lalu klik Simpan ke GitHub.
    Situs ikut berubah setelah deploy selesai.
 
-Catatan: link WhatsApp, TikTok, Instagram, Facebook, dan Telegram di data.json
-masih placeholder. Ganti lewat admin.
+Catatan: data.json sudah berisi profil dan link sosmed terbaru.
+Foto di data.json mengarah ke assets/avatar.webp, jadi pastikan file
+foto itu ada di folder assets/ (atau unggah lewat admin).

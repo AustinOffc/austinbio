@@ -61,7 +61,7 @@ async function api(path,o={}){
 const inp=(k,lab,v)=>`<label>${lab}<input data-k="${k}" value="${esc(v)}"></label>`;
 const btns=(l,i)=>`<span><button class="g" data-a="up" data-l="${l}" data-i="${i}">↑</button> <button class="g" data-a="dn" data-l="${l}" data-i="${i}">↓</button> <button class="g" data-a="rm" data-l="${l}" data-i="${i}">Hapus</button></span>`;
 function render(){
-  $('#top').innerHTML=inp('name','Nama',D.name)+inp('tagline','Tagline',D.tagline)+inp('avatar','Foto / logo (URL atau path)',D.avatar)+'<label>Unggah foto baru<input type="file" id="up" accept="image/*"></label>';
+  $('#top').innerHTML=inp('name','Nama',D.name)+inp('info','Info singkat (pisahkan dengan koma)',D.info)+inp('tagline','Tagline',D.tagline)+inp('avatar','Foto / logo (URL atau path)',D.avatar)+'<label>Unggah foto baru<input type="file" id="up" accept="image/*"></label>';
   $('#ln').innerHTML=D.links.map((l,i)=>`<div class="it"><div class="hd"><b>Tombol ${i+1}</b>${btns('links',i)}</div>${inp(`links.${i}.title`,'Judul',l.title)}${inp(`links.${i}.desc`,'Deskripsi',l.desc)}${inp(`links.${i}.url`,'Link',l.url)}${inp(`links.${i}.icon`,'Ikon',l.icon)}</div>`).join('');
   $('#sc').innerHTML=D.socials.map((s,i)=>`<div class="it"><div class="hd"><b>${esc(s.label)||'Sosmed '+(i+1)}</b>${btns('socials',i)}</div>${inp(`socials.${i}.label`,'Nama',s.label)}${inp(`socials.${i}.url`,'Link',s.url)}${inp(`socials.${i}.icon`,'Ikon',s.icon)}</div>`).join('');
 }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Austin</title>
+<title>Ach Muhlis</title>
 <meta name="theme-color" content="#0e1216">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +23,10 @@ main{position:relative;z-index:1;max-width:440px;margin:0 auto;padding:max(44px,
 @keyframes gl{0%,100%{box-shadow:0 0 22px #4cc9f044}50%{box-shadow:0 0 42px #4cc9f099}}
 .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 h1{margin-top:18px;font:700 44px/1 'Chakra Petch',sans-serif;letter-spacing:.06em;text-transform:uppercase;animation:in .7s .15s both}
-.tg{margin:10px auto 0;max-width:30ch;color:var(--mut);font-size:15px;line-height:1.45;animation:in .7s .25s both}
+.tg{margin:14px auto 0;max-width:34ch;color:var(--mut);font-size:15px;line-height:1.45;animation:in .7s .25s both}
 @keyframes in{from{opacity:0;translate:0 14px}}
+.ch{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:14px}
+.ch span{padding:5px 12px;font:600 13px 'Chakra Petch',sans-serif;color:var(--ac);background:#1d2733;box-shadow:inset 2px 0 var(--ac);clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));animation:rise .6s var(--sp) both;animation-delay:calc(.3s + var(--i)*70ms)}
 .list{display:grid;gap:14px;margin-top:34px}
 .t{position:relative;display:flex;align-items:center;gap:14px;padding:15px 18px 15px 20px;color:var(--tx);text-decoration:none;text-align:left;background:var(--line);clip-path:var(--cut);transition:transform .3s var(--sp),background .2s;animation:slide .6s var(--sp) both;animation-delay:calc(.45s + var(--i)*80ms)}
 @keyframes slide{from{opacity:0;translate:-34px 0}}
@@ -56,6 +58,7 @@ footer{margin-top:30px;font-size:13px;color:var(--mut)}
       <div class="pic"><b id="mono"></b><img id="pic" alt=""></div>
     </div>
     <h1 id="name"></h1>
+    <div class="ch" id="info"></div>
     <p class="tg" id="tag"></p>
   </header>
   <nav class="list" id="list"></nav>
@@ -72,6 +75,7 @@ fetch('data.json?t='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(d=>{
   document.title=d.name;
   $('#name').textContent=d.name;
   $('#tag').textContent=d.tagline;
+  $('#info').innerHTML=(d.info||'').split(',').map(x=>x.trim()).filter(Boolean).map((x,i)=>`<span style="--i:${i}">${esc(x)}</span>`).join('');
   $('#mono').textContent=(d.name||'A')[0];
   $('#ring').textContent=(d.name.toUpperCase()+' • ').repeat(Math.ceil(36/(d.name.length+3)));
   const im=$('#pic');im.onerror=()=>im.remove();im.src=d.avatar;
