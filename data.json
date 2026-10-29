@@ -19,13 +19,13 @@
     },
     {
       "title": "LuciBook",
-      "desc": "Website catatan",
+      "desc": "Website catatan, catat apa saja dimana saja",
       "url": "lucibook.my.id",
       "icon": "fa-solid fa-book-open"
     },
     {
       "title": "AustinPlay",
-      "desc": "Website musik",
+      "desc": "Website musik tanpa iklan",
       "url": "austinplay.vercel.app",
       "icon": "fa-solid fa-music"
     },
