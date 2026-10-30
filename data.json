@@ -6,28 +6,39 @@
   "music": "assets/music.mp3?v=1793213920550",
   "links": [
     {
+      "title": "Tentang Saya",
+      "desc": "Website portofolio tentang Austin",
+      "url": "https://ach-muhlis.my.id",
+      "icon": "fa-solid fa-user",
+      "logo": "assets/logo-austinofficial.webp"
+    },
+    {
       "title": "AustinPay",
       "desc": "Website payment gateway",
       "url": "austinx.cloud",
-      "icon": "fa-solid fa-wallet"
+      "icon": "fa-solid fa-wallet",
+      "logo": "assets/logo-austinpay.webp"
     },
     {
       "title": "Austin Store",
       "desc": "Marketplace top up semua game & layanan digital lengkap",
       "url": "mymarket.id",
-      "icon": "fa-solid fa-bag-shopping"
+      "icon": "fa-solid fa-bag-shopping",
+      "logo": "assets/logo-mymarket.webp"
     },
     {
       "title": "LuciBook",
       "desc": "Website catatan, catat apa saja dimana saja",
       "url": "lucibook.my.id",
-      "icon": "fa-solid fa-book-open"
+      "icon": "fa-solid fa-book-open",
+      "logo": "assets/logo-lucibook.webp"
     },
     {
       "title": "AustinPlay",
       "desc": "Website musik tanpa iklan",
-      "url": "https://austinplay.my.id",
-      "icon": "fa-solid fa-music"
+      "url": "austinplay.vercel.app",
+      "icon": "fa-solid fa-music",
+      "logo": "assets/logo-austinplay.webp"
     },
     {
       "title": "Channel Austin Official",
