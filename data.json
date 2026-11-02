@@ -41,6 +41,13 @@
       "logo": "assets/logo-austinplay.webp"
     },
     {
+      "title": "RVC - Ruang Vibe Coders",
+      "desc": "Belajar coding & vibe coding aman, 29 modul interaktif",
+      "url": "rvc.austinofficial.site",
+      "icon": "fa-solid fa-code",
+      "logo": "assets/logo-rvc.webp"
+    },
+    {
       "title": "Channel Austin Official",
       "desc": "Channel informasi Austin di WhatsApp",
       "url": "https://whatsapp.com/channel/0029VbAYbLc7tkizhltuyV1b",
